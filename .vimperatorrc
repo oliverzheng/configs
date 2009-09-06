@@ -1,0 +1,18 @@
+" 1.2 (created: 2008/08/16 18:51:52)
+" Mappings
+map > gt
+map < gT
+noremap x gt
+noremap z gT
+noremap a H
+noremap s L
+
+" Options
+set hlsearch
+set defsearch=g
+
+" Abbreviations
+
+source! ~/.vimperatorrc.local
+
+" vim: set ft=vimperator:

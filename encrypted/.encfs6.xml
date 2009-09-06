@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<!DOCTYPE boost_serialization>
+<boost_serialization signature="serialization::archive" version="5">
+<config class_id="0" tracking_level="1" version="20080816" object_id="_0">
+	<creator>EncFS 1.5</creator>
+	<cipherAlg class_id="1" tracking_level="0" version="0">
+		<name>ssl/aes</name>
+		<major>2</major>
+		<minor>2</minor>
+	</cipherAlg>
+	<nameAlg>
+		<name>nameio/block</name>
+		<major>3</major>
+		<minor>0</minor>
+	</nameAlg>
+	<keySize>256</keySize>
+	<blockSize>1024</blockSize>
+	<uniqueIV>1</uniqueIV>
+	<chainedNameIV>1</chainedNameIV>
+	<externalIVChaining>1</externalIVChaining>
+	<blockMACBytes>8</blockMACBytes>
+	<blockMACRandBytes>0</blockMACRandBytes>
+	<allowHoles>1</allowHoles>
+	<encodedKeySize>52</encodedKeySize>
+	<encodedKeyData>
+xrnrMlIQHcK2hkQbA+jdPQBArwhxPu3VuQZV/gSCq50ffQujYVHrbuY/rzITwza8N96/aA==
+	</encodedKeyData>
+	<saltLen>20</saltLen>
+	<saltData>
+pAlKIHAyEvLupDfphgqDp0Z3F9U=
+	</saltData>
+	<kdfIterations>447577</kdfIterations>
+	<desiredKDFDuration>3000</desiredKDFDuration>
+</config>
+</boost_serialization>
+

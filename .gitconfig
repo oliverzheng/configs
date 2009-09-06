@@ -1,0 +1,13 @@
+[user]
+	name = Oliver Zheng
+	email = gitcommits@oliverzheng.com
+[color]
+	branch = auto
+	diff = auto
+	interactive = auto
+	status = auto
+	sh = auto
+[alias]
+	sh = !git-sh
+[color "sh"]
+	branch = yellow

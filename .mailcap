@@ -1,0 +1,9 @@
+text/html;          firefox %s
+text/html;          /usr/bin/elinks %s; nametemplate=%s.html
+text/html;          /usr/bin/elinks -force-html -dump-width 80 %s; nametemplate=%s.html; copiousoutput
+
+image/*;            feh %s ; test=test -n "$DISPLAY";
+
+text/x-csrc;        view %s; needsterminal
+application/pdf;    evince '%s'; test=test -n "$DISPLAY";
+application/msword; antiword %s; copiousoutput

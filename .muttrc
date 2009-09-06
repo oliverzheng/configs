@@ -1,0 +1,101 @@
+#source ~/.Mutt/muttrc.mailboxes
+
+set mbox_type=Maildir
+set folder=$HOME/mail/oliverzheng
+set spoolfile=+/INBOX
+set header_cache=~/.hcache
+set postponed="+[Gmail].Drafts"
+set markers=no
+
+set index_format = "%4c %Z %{%b %e}  %-25.25L  %s"
+set auto_tag=yes
+set mark_old=no
+
+set sort='threads'
+
+set delete="yes"
+set include=yes
+set abort_nosubject=no
+set reply_to=ask-yes
+set mime_forward_rest=yes
+
+set sendmail="/usr/bin/msmtp"
+set edit_headers=yes
+set from='"Oliver Zheng" <me@oliverzheng.com>'
+set realname="Oliver Zheng"
+set use_from="yes"
+set envelope_from="yes"
+fcc-hook . "~/mail/oliverzheng/[Gmail].Sent Mail/"
+hdr_order Date From Sender To CC Subject Reply-To User-Agent X-Mailer
+
+set move=no
+set reverse_name=yes
+
+set mailcap_path=~/.mailcap
+alternative_order text/plain text text/html text/enriched image/*
+auto_view text/html
+
+set help=no
+set noconfirmappend
+set forward_format="Fwd: %s"
+
+set editor="vim -c':set spell'"
+set edit_headers
+
+set pager_context=4
+set pager_index_lines=12
+
+color attachment brightmagenta default
+color error red default   # errors yell at you in red
+color hdrdefault cyan default # headers
+color indicator brightwhite blue # currently selected message
+color markers brightcyan black  # the + for wrapped pager lines
+color message brightcyan default # informational messages, not mail
+color normal white default # plain text
+color quoted green default # quoted text
+color search brightgreen black # hilite search patterns in the pager
+color signature red default # signature (after "-- ") is red 
+color status black brightwhite # status bar is yellow *on blue*   
+color tilde blue default  # ~'s after message body
+color tree white default # thread tree in index menu is magenta
+color signature brightred default
+color underline green default
+color header brightwhite default ^(Date|From|To|Subject): # Important headers
+color body magenta default "(ftp|http)://[^ ]+"  # picks up URLs
+color body magenta default [-a-z_0-9.]+@[-a-z_0-9.]+ 
+
+#  Coloring quoted text - coloring the first 7 levels:
+color quoted    cyan default
+color quoted1   yellow default
+color quoted2   red default
+color quoted3   green default
+color quoted4   cyan default
+color quoted5   yellow default
+color quoted6   red default
+color quoted7   green default
+
+#  Colorize smileys:  :-)  ;-)  :-/  :-(
+color body  yellow default "[;:]-[)/(|]"
+color body  yellow default "[;:][)/(|]"
+color body  green default "[[:alpha:]]\+://[^ ]*"
+
+color index brightyellow default ~N      # New
+color index brightyellow default ~O              # Old
+color index magenta default ~F
+color index blue default ~T
+color index red default ~D
+
+ignore *
+unignore From: To: CC: Subject: Date: Reply-To: Sender:
+unignore User-Agent: X-Mailer:
+
+set alias_file=~/.mutt/aliases
+source ~/.mutt/aliases
+set sort_alias=alias
+
+bind index G last-entry
+
+source `case $TERM in \
+            *256color) echo '~/.mutt/colors256-dark'; break ;; \
+            *)         echo '~/.mutt/konsole-color'; break ;; \
+        esac`

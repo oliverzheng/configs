@@ -1,0 +1,12 @@
+REM Aug 21 2009 +3  AT 10:00 SCHED _sfun MSG Meetup with Brian and Lucas for Twist
+REM Aug 25 2009 +3  AT 10:00 SCHED _sfun MSG %a %2 %"Lucas/Oliver - Closed-doors planning meeting - please be on time! (me included) at Office%"%
+REM Aug 30 2009 AT 20:00 DURATION 0:30 MSG Haircut
+REM Aug 24 2009 AT 13:00 DURATION 4:00 MSG Meeting with Serguei @ Cornerstone Cafe for Traitbook
+REM Aug 27 2009 AT 14:30 DURATION 0:30 MSG Doctor's appointment (604.278.5191)
+REM Sep 3 2009 AT 16:00 DURATION 3:00 MSG IEEE Meeting
+REM Sep 10 2009 AT 08:00 DURATION 2:00 MSG ECE breakfast
+REM Sep 11 2009 MSG Coop student evaluation due.
+REM Sep 11 2009 AT 14:00 DURATION 0:25 MSG Coop oral presentation + slides due.
+REM Sep 20 2009 AT 20:00 DURATION 0:30 MSG Haircut
+REM Oct 3 2009 MSG TEDx Terry Talks at UBC
+REM Sep 9 2009 MSG Tuition due

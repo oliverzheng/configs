@@ -1,0 +1,104 @@
+Xcursor.theme: ComixCursors-Green-Regular
+! terminal colors ------------------------------------------------------------
+
+! tangoesque scheme
+*background: #111111
+*foreground: #babdb6
+! Black (not tango) + DarkGrey
+*color0:  #000000
+*color8:  #777777
+! DarkRed + Red
+*color1:  #ff6565
+*color9:  #ff8d8d
+! DarkGreen + Green
+*color2:  #93d44f
+*color10: #c8e7a8
+! DarkYellow + Yellow
+*color3:  #eab93d
+*color11: #ffc123
+! DarkBlue + Blue
+*color4:  #204a87
+*color12: #3465a4
+! DarkMangenta + Mangenta
+*color5:  #ce5c00
+*color13: #f57900
+!DarkCyan + Cyan (both not tango)
+*color6:  #89b6e2
+*color14: #46a4ff
+! LightGrey + White
+*color7:  #dddddd
+*color15: #ffffff
+
+
+! Xft settings
+!
+Xft.dpi:		120
+Xft.antialias:		true
+Xft.rgba:		rgb
+Xft.hinting:		true
+Xft.hintstyle:		hintslight
+
+! rxvt-unicode ---------------------------------------------------------------
+
+! font preference
+!urxvt*font:      -*-terminus-*-*-*-*-*-*-*-*-*-*-*-*
+!urxvt*boldFont:  -*-terminus-*-*-*-*-*-*-*-*-*-*-*-*
+!urxvt*font:      xft:Terminus-10
+urxvt*font:      xft:Terminus:pixelsize=16:antialias=false
+urxvt*boldFont:  xft:Terminus:bold:pixelsize=16:antialias=false
+!initial size
+urxvt*geometry:           120x35
+!internal whitespace
+urxvt*internalBorder:     5
+!fade text n% upon unfocus
+urxvt*fading:             15
+!darken=(0 to 100) lighten=(-1 to -100)
+urxvt*shading:            30
+!tint background with this color
+urxvt*tintColor:          black
+!set to 32-bit for real transparency (compositing required)
+!urxvt*depth:             24
+!save n lines of scrollback buffer
+urxvt*saveLines:          32767
+!flash screen for attention
+urxvt*visualBell:         true
+!jump to bottom (prompt) on keypress
+urxvt*scrollTtyKeypress:  true
+!jump to bottom (prompt) when tty gets new lines
+urxvt*scrollWithBuffer:   false
+!jump to bottom (prompt) on tty output
+urxvt*scrollTtyOutput:    false
+!toggle scrollbar
+urxvt*scrollBar:          false
+!scrollbar styles: rxvt, plain, next or xterm
+urxvt*scrollstyle:        plain
+!scrollbar alignment
+urxvt*scrollBar_right:    true
+urxvt*scrollColor:        #777777
+urxvt*cursorColor:        #ffcc00
+!is this a login shell?
+urxvt*loginShell:         true
+!set the TERM environment variable
+urxvt*termName:           rxvt-unicode
+!enable pseudo-transparency (requires depth: 24 (see above))
+urxvt*inheritPixmap:      true
+!delimiters for double-click mouse selection
+urxvt*cutchars:           "()*,<>[]{}|'
+!screen dump settings
+urxvt*print-pipe:         cat > $(echo urxvt.dump.$(date +'%Y%M%d%H%m%S'))
+!secondary screen scroll (default enabled)
+urxvt*secondaryScroll:    true
+!de-iconify (map) on receipt of a bell character
+urxvt*mapAlert:           true
+!inhibit writing record into the system log file utmp
+urxvt*utmpInhibit:        true
+!! BEGIN urlLauncher settings !!
+urxvt*perl-lib:           /usr/lib/urxvt/perl/
+urxvt*perl-ext-common:    default,matcher
+urxvt*urlLauncher:        /usr/bin/firefox
+urxvt*matcher.button:     1
+!! END urlLauncher settings !!
+
+!transparent=0000 opaque=ffff
+urxvt*background: rgba:1111/1111/1111/dddd
+

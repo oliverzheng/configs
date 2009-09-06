@@ -1,0 +1,6 @@
+#max-items        100
+browser          firefox
+#show-read-feeds  no
+player           mplayer
+bind-key         k  up
+bind-key         j  down
