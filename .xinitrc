@@ -21,4 +21,8 @@ xmodmap ~/.Xmodmap
 xset -b r rate 225 50
 xsetroot -cursor_name left_ptr
 #xcompmgr -c -t-5 -l-5 -r4.2 -o.55 &
+xcompmgr -fF -D 3 &
+
+screen -d -m rtorrent
+
 exec awesome

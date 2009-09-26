@@ -2,8 +2,8 @@ Xcursor.theme: ComixCursors-Green-Regular
 ! terminal colors ------------------------------------------------------------
 
 ! tangoesque scheme
-*background: #111111
-*foreground: #babdb6
+*background: #000000
+*foreground: #EEEEEE
 ! Black (not tango) + DarkGrey
 *color0:  #000000
 *color8:  #777777
@@ -26,7 +26,7 @@ Xcursor.theme: ComixCursors-Green-Regular
 *color6:  #89b6e2
 *color14: #46a4ff
 ! LightGrey + White
-*color7:  #dddddd
+*color7:  #eeeeee
 *color15: #ffffff
 
 
@@ -49,15 +49,15 @@ urxvt*boldFont:  xft:Terminus:bold:pixelsize=16:antialias=false
 !initial size
 urxvt*geometry:           120x35
 !internal whitespace
-urxvt*internalBorder:     5
+urxvt*internalBorder:     2
 !fade text n% upon unfocus
-urxvt*fading:             15
+!urxvt*fading:             30
 !darken=(0 to 100) lighten=(-1 to -100)
-urxvt*shading:            30
+urxvt*shading:            0
 !tint background with this color
 urxvt*tintColor:          black
 !set to 32-bit for real transparency (compositing required)
-!urxvt*depth:             24
+urxvt*depth:             32
 !save n lines of scrollback buffer
 urxvt*saveLines:          32767
 !flash screen for attention
@@ -94,11 +94,16 @@ urxvt*mapAlert:           true
 urxvt*utmpInhibit:        true
 !! BEGIN urlLauncher settings !!
 urxvt*perl-lib:           /usr/lib/urxvt/perl/
-urxvt*perl-ext-common:    default,matcher
+urxvt*perl-ext-common:    default,matcher,clipboard
 urxvt*urlLauncher:        /usr/bin/firefox
 urxvt*matcher.button:     1
 !! END urlLauncher settings !!
-
-!transparent=0000 opaque=ffff
-urxvt*background: rgba:1111/1111/1111/dddd
-
+URxvt*buffered: true
+URxvt*foreground: #ffffff
+URxvt*background: rgba:0000/0000/0000/BBBB
+URxvt*transparent: false
+!URxvt*fading: 0%
+!URxvt*fadeColor: black
+URxvt*shading: 10
+!transparent=0000 opaque=ffff transparent=dddd
+!urxvt*background: rgba:1111/1111/1111/dddd
