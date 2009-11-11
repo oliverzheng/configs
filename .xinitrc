@@ -25,4 +25,10 @@ xcompmgr -fF -D 3 &
 
 screen -d -m rtorrent
 
+export XMODIFIERS=@im=SCIM
+export GTK_IM_MODULE="scim"
+export QT_IM_MODULE="scim"
+
+scim -d
+
 exec awesome

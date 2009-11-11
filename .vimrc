@@ -24,6 +24,8 @@ set sts=4
 set expandtab
 set ttimeoutlen=100
 set tw=80
+set showmatch
+set fo+=nl1
 
 set spellfile=~/.vim/dict.add
 
@@ -32,6 +34,9 @@ syntax on
 :noremap <silent> <C-N> :noh<CR>
 :noremap <silent> <C-]> <C-W><C-]>
 :noremap <silent> <C-> <C-]>
+
+:imap <C-L> gqap
+:map <C-L> gqap
 
 :noremap <silent> <SPACE> <PAGEDOWN>
 :noremap <silent> <S-SPACE> <PAGEUP>

@@ -71,6 +71,7 @@ syn match rstTitle ".\{2,120}\n\(\.\|=\|-\|=\|`\|:\|'\|\"\|\~\|\^\|_\|\*\|+\|#\|
 "syn match rstTitle "\w.*\n\(=\|-\|+\)\{2,120}"
 
 "ReStructuredText Lists:
+syn match rstEnumeratedList "^\s*# \s"
 syn match rstEnumeratedList "^\s*\d\{1,3}\.\s"
 
 syn match rstBulletedList "^\s*\([+-]\|\*\)\s"

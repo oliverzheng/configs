@@ -99,3 +99,9 @@ source `case $TERM in \
             *256color) echo '~/.mutt/colors256-dark'; break ;; \
             *)         echo '~/.mutt/konsole-color'; break ;; \
         esac`
+
+macro pager \cb <pipe-entry>'urlview'<enter> 'Follow links with urlview'
+set query_command = "python -Wignore::DeprecationWarning /home/oliver/util/contactos.py '%s'"
+
+bind editor <Tab> complete-query
+bind editor ^t complete

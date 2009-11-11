@@ -79,7 +79,7 @@ urxvt*cursorColor:        #ffcc00
 !is this a login shell?
 urxvt*loginShell:         true
 !set the TERM environment variable
-urxvt*termName:           rxvt-unicode
+urxvt*termName:           rxvt
 !enable pseudo-transparency (requires depth: 24 (see above))
 urxvt*inheritPixmap:      true
 !delimiters for double-click mouse selection
