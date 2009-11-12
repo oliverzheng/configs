@@ -1,0 +1,15 @@
+#!/bin/bash
+
+mkdir -p ~/.encrypted
+cd ~/.encrypted
+for file in `ls -a`; do
+    if [ "$file" != "." -a "$file" != ".." ]; then
+        echo $file
+        if [ -d "$file" ]; then
+            chmod 700 "$file"
+        else
+            chmod 600 "$file"
+        fi
+        ln -s ~/.encrypted/"$file" ~
+    fi
+done

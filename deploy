@@ -2,13 +2,7 @@
 shopt -s dotglob
 cd ~/configs
 for file in *; do
-    if [ "$file" != ".git" -a "$file" != "deploy" -a "$file" != "encrypted" ]; then 
+    if [ "$file" != ".git" -a "$file" != "deploy" -a "$file" != "deploy_encrypted" -a "$file" != "encrypted" ]; then 
         ln -s configs/"$file" ~
     fi
-done
-
-cd ~/.encrypted
-for file in *; do
-    chmod 600 "$file"
-    ln -s ~/.encrypted/"$file" ~
 done
