@@ -1,0 +1,11 @@
+<!DOCTYPE pam_mount SYSTEM "pam_mount.conf.xml.dtd">
+<pam_mount>
+
+    <volume
+        user="oliver"
+        fstype="fuse"
+        path="encfs#/home/oliver/configs/encrypted"
+        mountpoint="/home/oliver/.encrypted"
+        options="nosuid,nodev"
+    />
+</pam_mount>
