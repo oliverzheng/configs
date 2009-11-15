@@ -4,6 +4,8 @@ text/html;          /usr/bin/elinks -force-html -dump-width 80 %s; nametemplate=
 
 image/*;            feh %s ; test=test -n "$DISPLAY";
 
-text/x-csrc;        view %s; needsterminal
+text/x-csrc;        vim %s; needsterminal
 application/pdf;    evince '%s'; test=test -n "$DISPLAY";
 application/msword; soffice %s; copiousoutput
+
+application/vnd.openxmlformats-officedocument.wordprocessingml.document; soffice %s; copiousoutput
