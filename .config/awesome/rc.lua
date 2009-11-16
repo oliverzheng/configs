@@ -159,6 +159,65 @@ tb_mail = widget({type = "textbox"})
 -- Set the default text in textbox
 --tb_time.text = "<b><small> " .. AWESOME_RELEASE .. " </small></b>"
 
+-- {{{ Battery state Widget
+ 
+batterywidget = widget({
+    type = 'textbox',
+    name = 'batterywidget',
+    })
+
+batterytimer = timer { timeout = 3 }
+batterytimer:add_signal("timeout", function ()
+    local f = io.open('/proc/acpi/battery/BAT0/info')
+    local infocontents = f:read('*all')
+    f:close()
+
+    f = io.open('/proc/acpi/battery/BAT0/state')
+    local statecontents = f:read('*all')
+    f:close()
+
+    local status, _
+    -- Find the full capacity (from info)
+    local full_cap
+    
+    status, _, full_cap = string.find(infocontents, "last full capacity:%s+(%d+).*")
+
+    -- Find the current capacity, state and (dis)charge rate (from state)
+    local state, rate, current_cap
+    
+    status, _, state = string.find(statecontents, "charging state:%s+(%w+)")
+    status, _, rate  = string.find(statecontents, "present rate:%s+(%d+).*")
+    status, _, current_cap = string.find(statecontents, "remaining capacity:%s+(%d+).*")
+
+    local percent, time
+    percent = current_cap / full_cap * 100
+
+    local color
+    percent = math.floor(percent)
+    if percent < 25 then
+        color = "CC0000"
+    else
+        color = "CC9900"
+    end
+
+    if state == "charged" then
+        batterywidget.text = "<span foreground='#00CC00'>100%</span>"
+        return
+    elseif state == "charging" then
+        color = "00CC00"
+        time = (full_cap - current_cap) / rate
+    elseif state == "discharging" then
+        time = current_cap / rate
+    end
+
+    time_hour = math.floor(time)
+    time_minute = math.floor((time - time_hour) * 60)
+
+    batterywidget.text = "<span foreground='#" .. color .. "'>" .. percent .. "%</span> " .. string.format("(%02d:%02d)", time_hour, time_minute)
+end)
+batterytimer:start()
+-- }}}
+
 -- Create a laucher widget and a main menu
 myawesomemenu = {
    { "manual", terminal .. " -e man awesome" },
@@ -256,6 +315,8 @@ for s = 1, screen.count() do
         tb_mail,
         myspace,
         pb_volume,
+        myspace,
+        batterywidget,
         myspace,
         s == 1 and mysystray or nil,
         mytasklist[s],
@@ -523,8 +584,14 @@ client.add_signal("manage", function (c, startup)
     c.size_hints_honor = false
 end)
 
-client.add_signal("focus", function(c) c.border_color = beautiful.border_focus end)
-client.add_signal("unfocus", function(c) c.border_color = beautiful.border_normal end)
+client.add_signal("focus", function(c)
+    c.border_color = beautiful.border_focus
+    c.opacity = 1
+end)
+client.add_signal("unfocus", function(c)
+    c.border_color = beautiful.border_normal
+    c.opacity = 0.65
+end)
 
 
 -- Hook called every second
@@ -560,3 +627,5 @@ mytimer:start()
 --keybinding({ }, "#176", function () volume("up", pb_volume) end):add()
 --keybinding({ }, "#174", function () volume("down", pb_volume) end):add()
 --keybinding({ }, "#160", function () volume("mute", pb_volume) end):add()
+
+
