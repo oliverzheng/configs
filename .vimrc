@@ -25,6 +25,7 @@ set expandtab
 set ttimeoutlen=100
 set tw=80
 set showmatch
+set showcmd
 set fo+=nl1
 
 set spellfile=~/.vim/dict.add
