@@ -27,7 +27,9 @@ set tw=80
 set showmatch
 set showcmd
 set fo+=nl1
-
+set nojoinspaces "Do not join lines with 2 spaces (just 1 is good enough)
+set hlsearch
+set matchtime=1 "Quickly show matching parens
 set spellfile=~/.vim/dict.add
 
 syntax on
