@@ -398,6 +398,11 @@ globalkeys = awful.util.table.join(
                   awful.util.spawn(screenlock)
               end),
 
+    awful.key({ }, "#237",
+              function ()
+                  awful.util.spawn(screenlock)
+              end),
+
     -- Music
     awful.key({ }, "#172",
               function ()
