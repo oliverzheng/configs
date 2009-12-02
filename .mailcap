@@ -7,5 +7,5 @@ image/*;            feh %s ; test=test -n "$DISPLAY";
 text/x-csrc;        vim %s; needsterminal
 application/pdf;    evince '%s'; test=test -n "$DISPLAY";
 application/msword; soffice %s; copiousoutput
-
+application/vnd.ms-excel; soffice %s; copiousoutput
 application/vnd.openxmlformats-officedocument.wordprocessingml.document; soffice %s; copiousoutput
