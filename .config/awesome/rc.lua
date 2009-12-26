@@ -487,7 +487,7 @@ awful.rules.rules = {
     -- Set Firefox to always map on tags number 2 of screen 1.
     { rule = { instance = "Navigator" },
        properties = { tag = tags[1][1] } },
-    { rule = { instance = "pidgin" },
+    { rule = { instance = "Pidgin" },
        properties = { tag = tags[1][7] } },
     { rule = { class = "OpenOffice.org 3.1" },
        properties = { tag = tags[1][4] } },
