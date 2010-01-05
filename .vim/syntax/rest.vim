@@ -30,8 +30,8 @@ endif
 "syn match rstJunk "\\_"
 
 "ReStructuredText Text Inline Markup:
-syn region rstEmphasis start=+\*[^*]+ end=+\*+ 
-syn region rstStrongEmphasis start=+\*\*[^*]+ end=+\*\*+ 
+syn region rstEmphasis start=+\*\S[^*]+ end=+\*+ 
+syn region rstStrongEmphasis start=+\*\*\S[^*]+ end=+\*\*+ 
 syn region rstInterpretedText start=+`[^`]+ end=+`+ contains=rstURL
 syn region rstInlineLiteral start="``" end="``" contains=rstURL
 "Using a syn region here causes too much to be highlighted.
