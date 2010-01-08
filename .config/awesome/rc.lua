@@ -155,6 +155,8 @@ myseparator.text = "|"
 -- Create a textbox widget
 tb_time = widget({ type = "textbox" })
 tb_mail = widget({type = "textbox"})
+batterywidget = widget({type = 'textbox'})
+
 --tb_mail.text = os.date("<span foreground='#FFFFFF'>%I:%M %p</span> ")
 -- Set the default text in textbox
 --tb_time.text = "<b><small> " .. AWESOME_RELEASE .. " </small></b>"
@@ -256,6 +258,8 @@ for s = 1, screen.count() do
         tb_mail,
         myspace,
         pb_volume,
+        myspace,
+        batterywidget,
         myspace,
         s == 1 and mysystray or nil,
         mytasklist[s],
@@ -560,6 +564,63 @@ mytimer:add_signal("timeout", function ()
 
 end)
 mytimer:start()
+
+batterytimer = timer { timeout = 2 }
+batterytimer:add_signal("timeout", function ()
+    local f = io.open('/proc/acpi/battery/BAT0/info')
+    local infocontents = f:read('*all')
+    f:close()
+
+    f = io.open('/proc/acpi/battery/BAT0/state')
+    local statecontents = f:read('*all')
+    f:close()
+
+    local status, _
+    -- Find the full capacity (from info)
+    local full_cap
+
+    status, _, full_cap = string.find(infocontents, "last full capacity:%s+(%d+).*")
+
+    -- Find the current capacity, state and (dis)charge rate (from state)
+    local state, rate, current_cap
+
+    status, _, state = string.find(statecontents, "charging state:%s+(%w+)")
+    status, _, rate  = string.find(statecontents, "present rate:%s+(%d+).*")
+    status, _, current_cap = string.find(statecontents, "remaining capacity:%s+(%d+).*")
+
+    local prefix, percent, time
+    percent = current_cap / full_cap * 100
+    if state == "charged" then
+        percent = 100
+        time = ""
+    elseif state == "charging" then
+        time = (full_cap - current_cap) / rate
+    elseif state == "discharging" then
+        time = current_cap / rate
+    end
+
+    percent = math.floor(percent)
+
+    if state ~= "charged" then
+        time_hour = math.floor(time)
+        time_minute = math.floor((time - time_hour) * 60)
+        time = string.format("(%02d:%02d)", time_hour, time_minute)
+    end
+
+    local color
+    if state == "discharging" then
+        if percent < 20 then
+            color = "#FF2400"
+        else
+            color = "#FFA54F"
+        end
+    else
+        color = "#9ACD32"
+    end
+    batterywidget.text = "<span color='" .. color .."'>" .. percent .. "% " .. time .. "</span>"
+end)
+batterytimer:start()
+
 -- }}}
 
 --table.insert(globalkeys, key({ }, "#176", function () volume("up", pb_volume) end))
