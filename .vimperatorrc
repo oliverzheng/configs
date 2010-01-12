@@ -2,8 +2,8 @@
 " Mappings
 map > gt
 map < gT
-noremap x gt
-noremap z gT
+noremap c gt
+noremap x gT
 noremap a H
 noremap s L
 
