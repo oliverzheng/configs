@@ -23,6 +23,10 @@ export FBCMD="/home/oliver/.fbcmd"
 
 export EDITOR=vim
 export VISUAL=vim
+
+LC_COLLATE="C"
+export LC_COLLATE
+
 export PATH=/opt/gwt:~/playground/app-engine-patch-sample:~/util/google_appengine:~/util:.:$PATH
 
 alias pow="wine '/home/oliver/.wine/drive_c/SuperMemo Extreme English!/MSM.exe' 'Power Words!.kno'"
