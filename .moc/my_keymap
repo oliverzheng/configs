@@ -114,6 +114,16 @@ plist_move_up =		K
 plist_move_down =	J
 theme_menu =		T
 
+toggle_equalizer =	E
+equalizer_refresh =	e
+equalizer_prev =	W
+equalizer_next =	u
+toggle_make_mono =	y
+show_lyrics =		L
+playlist_full_paths =	P
+enqueue_file =		z
+clear_queue =		Z
+
 exec_command1 = 	F1
 exec_command2 = 	F2
 exec_command3 = 	F3
