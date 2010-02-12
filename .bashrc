@@ -9,7 +9,6 @@ alias ll='ls -hl --color=tty --group-directories-first'
 alias lla='ls -hAl --color=tty --group-directories-first'
 alias llt='ls -hAl --color=tty --group-directories-first --sort=time'
 alias ..='cd ..'
-alias tagsup='ctags --languages=c,c++ -R *'
 alias vi='vim'
 alias free='free -m'
 
