@@ -5,6 +5,9 @@ else
     colorscheme desert256
 endif
 
+filetype plugin on
+filetype indent on
+
 set ignorecase
 set smartcase
 set number
@@ -18,6 +21,7 @@ set autochdir
 set clipboard=unnamed
 set tags=tags;
 set ai
+set si
 set ts=4
 set sw=4
 set sts=4
