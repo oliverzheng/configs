@@ -54,3 +54,14 @@ syntax on
 
 :noremap <silent> <tab> gt
 :noremap <silent> <S-tab> gT
+
+map <F5> :!ctags -R .<CR>
+
+" Omni
+let OmniCpp_GlobalScopeSearch = 1
+let OmniCpp_NamespaceSearch = 1
+let OmniCpp_ShowPrototypeInAbbr = 0
+let OmniCpp_SelectFirstItem = 2
+" Close preview window after unfocus
+autocmd CursorMovedI * if pumvisible() == 0|pclose|endif
+autocmd InsertLeave * if pumvisible() == 0|pclose|endif
