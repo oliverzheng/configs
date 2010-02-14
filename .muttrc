@@ -21,7 +21,7 @@ set mime_forward_rest=yes
 
 set sendmail="/usr/bin/msmtp"
 set edit_headers=yes
-set from='"Oliver Zheng" <me@oliverzheng.com>'
+set from='"Oliver Zheng" <default@oliverzheng.com>'
 set realname="Oliver Zheng"
 set use_from="yes"
 set envelope_from="yes"
