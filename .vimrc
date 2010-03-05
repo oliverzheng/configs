@@ -8,6 +8,10 @@ endif
 filetype plugin on
 filetype indent on
 
+" save and load folding automatically
+au BufWinLeave * mkview
+au BufWinEnter *.* silent loadview " *.* is to prevent blank vim from erroring
+
 set ignorecase
 set smartcase
 set number
