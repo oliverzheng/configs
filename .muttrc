@@ -89,8 +89,6 @@ ignore *
 unignore From: To: CC: Subject: Date: Reply-To: Sender:
 unignore User-Agent: X-Mailer:
 
-set alias_file=~/.mutt/aliases
-source ~/.mutt/aliases
 set sort_alias=alias
 
 bind index G last-entry
