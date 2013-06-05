@@ -16,7 +16,7 @@ function g() { cd $1 && l; }
 function calc () { awk "BEGIN { print $* ; }"; }
 
 
-export PS1='\[\033[1;30m\]\w: \[\033[00m\]'
+export PS1='\[$(tput bold)\]\w: \[$(tput sgr0)\]'
 
 export FBCMD="/home/oliver/.fbcmd"
 
